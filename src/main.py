@@ -35,17 +35,22 @@ def update_planets(planets, iren, event):
         planet.rotate()  # Rotar el planeta
         planet.orbit()   # Trasladar el planeta en su órbita
     
-    print("Planetas actualizados")
     iren.GetRenderWindow().Render()  # Renderizar de nuevo
 
 def main():
 
+    factor_expancion = 4
 
     planets = [
-        Planet(name="Mercurio", radius=0.5, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/jupiter.jpg", position=(2, 0, 0), orbit_radius=5, rotation_speed=0.05, orbit_speed=0.01),
-        Planet(name="Venus", radius=0.8, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/descarga.jpeg", position=(5, 0, 0), orbit_radius=2, rotation_speed=0.04, orbit_speed=0.02),
-        Planet(name="Tierra", radius=1.0, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/jupiter.jpg", position=(8, 0, 0), orbit_radius=4, rotation_speed=0.03, orbit_speed=0.05),
-        Planet(name="Marte", radius=0.6, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/jupiter.jpg", position=(11, 0, 0), orbit_radius=8, rotation_speed=0.07, orbit_speed=0.07),
+        Planet(name="Sol", radius=4.65, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/jupiter.jpg", position=(0, 0, 0), orbit_radius=0, rotation_speed=0.5, orbit_speed=0),
+        Planet(name="Mercurio", radius=0.017*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/mercurio.jpg", position=(0.39, 0, 0), orbit_radius=7, rotation_speed=1.0, orbit_speed=4.74),
+        Planet(name="Venus", radius=0.042*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/venus.jpg", position=(0.72, 0, 0), orbit_radius=10, rotation_speed=0.8, orbit_speed=3.5),
+        Planet(name="Tierra", radius=0.045*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/tierra.jpg", position=(1, 0, 0), orbit_radius=13, rotation_speed=0.9, orbit_speed=2.98),
+        Planet(name="Marte", radius=0.024*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/marte.jpg", position=(1.52, 0, 0), orbit_radius=16, rotation_speed=0.95, orbit_speed=2.41),
+        Planet(name="Júpiter", radius=0.5*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/jupiter.jpg", position=(5.2, 0, 0), orbit_radius=30, rotation_speed=2.4, orbit_speed=1.31),
+        Planet(name="Saturno", radius=0.42*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/saturno.jpg", position=(9.58, 0, 0), orbit_radius=40, rotation_speed=2.0, orbit_speed=0.97),
+        Planet(name="Urano", radius=0.18*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/urano.jpg", position=(19.22, 0, 0), orbit_radius=55, rotation_speed=1.6, orbit_speed=0.68),
+        Planet(name="Neptuno", radius=0.17*factor_expancion, texture_file="C:/Users/jhona/Documents/Javeriana/Primer Semestre/Computación Gráfica/vtk/sistema_solar/src/textures/neptuno.jpg", position=(30.05, 0, 0), orbit_radius=70, rotation_speed=1.5, orbit_speed=0.54),
     ]
 
     
