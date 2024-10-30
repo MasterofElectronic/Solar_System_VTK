@@ -1,0 +1,58 @@
+{
+  "Sun":
+  {
+    "size": "696340",
+    "planets":
+    {
+      "Mercury":
+      {
+        "size": "2440",
+        "orbit": "57.91e6",
+        "period": "0.240846"
+      },
+      "Venus": {
+        "size": "6052",
+        "orbit": "108.2e6",
+        "period": "0.615"
+      },
+      "Earth": {
+        "size": "6371",
+        "orbit": "149.6e6",
+        "period": "1",
+        "satellites":
+        {
+          "Moon": {
+            "size": "1737",
+            "orbit": "0.3844e6",
+            "period": "0.0748"
+          }
+        }
+      },
+      "Mars": {
+        "size": "3390",
+        "orbit": "227.9e6",
+        "period": "1.881"
+      },
+      "Jupiter": {
+        "size": "69911",
+        "orbit": "778.5e6",
+        "period": "11.86"
+      },
+      "Saturn": {
+        "size": "58232",
+        "orbit": "1.434e9",
+        "period": "29.46"
+      },
+      "Uranus": {
+        "size": "25362",
+        "orbit": "2.871e9",
+        "period": "84.01"
+      },
+      "Neptune": {
+        "size": "24622",
+        "orbit": "4.495e9",
+        "period": "164.8"
+      }
+    }
+  }
+}

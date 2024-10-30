@@ -1,0 +1,32 @@
+{
+  "Sun":
+  {
+    "size": "100",
+    "color": "1 1 1",
+    "planets":
+    {
+      "Mercury":
+      {
+        "size": "10",
+        "color": "0.5 0.6 0.4",
+        "orbit": "200",
+        "period": "0.240846"
+      },
+      "Earth": {
+        "size": "20",
+        "color": "0.1 0.1 1",
+        "orbit": "300",
+        "period": "1",
+        "satellites":
+        {
+          "Moon": {
+            "size": "5",
+            "color": "0.9 0.9 0.9",
+            "orbit": "35",
+            "period": "0.0748"
+          }
+        }
+      }
+    }
+  }
+}
