@@ -21,7 +21,7 @@ class Planet:
 
     def create_sphere(self, resolution= 50):
     
-        sphere = vtk.vtkSphereSource()
+        sphere = vtk.vtkTexturedSphereSource()
         sphere.SetRadius(self.radius)
         sphere.SetThetaResolution(resolution)
         sphere.SetPhiResolution(resolution)
@@ -30,17 +30,23 @@ class Planet:
     
     #funcion para aplicar texturas
 
-    # def apply_texture(self, actor):
+    def apply_texture(self, actor):
         
-    #     #lee la imagen de textura
-    #     reader = vtk.vtkJPEGReader()
-    #     reader.SetFileName(self.texture_file)
+        #lee la imagen de textura
+        reader = vtk.vtkJPEGReader()
+        reader.SetFileName(self.texture_file)
 
-    #     texture = vtk.vtkTexture()
-    #     texture.SetInputConnection(reader.GetOutputPort())
-    #     texture.InterpolateOn()
+        # Comprobación para asegurarse de que el archivo se está leyendo
+        reader.Update()
+        if reader.GetOutput().GetNumberOfPoints() == 0:
+            print("Error al cargar la textura:", self.texture_file)
 
-    #     actor.SetTexture(texture)
+        texture = vtk.vtkTexture()
+        texture.SetInputConnection(reader.GetOutputPort())
+        texture.InterpolateOn()
+
+        actor.SetTexture(texture)
+
 
 
 
@@ -58,11 +64,8 @@ class Planet:
         self.actor.SetPosition(*self.position)  # Posicionar el planeta
 
         # Aplicar la textura
-        texture = vtk.vtkTexture()
-        jpeg_reader = vtk.vtkJPEGReader()
-        jpeg_reader.SetFileName(self.texture_file)
-        texture.SetInputConnection(jpeg_reader.GetOutputPort())
-        self.actor.SetTexture(texture)
+        self.apply_texture(self.actor)
+
         
         return self.actor
     
